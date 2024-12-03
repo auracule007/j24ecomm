@@ -26,22 +26,25 @@ function Register() {
     console.log("Submitted")
 
     try {
-      const res = await fetch("http://localhost:8000/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          firstName,
-          lastName,
-          phone,
-          role,
-          address,
-          password,
-          confirmPassword,
-        })
-      })
+      const res = await fetch(
+        "https://ecommerce-api-b291.onrender.com/api/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            firstName,
+            lastName,
+            phone,
+            role,
+            address,
+            password,
+            confirmPassword,
+          }),
+        }
+      );
 
       const data = await res.json();
       if (!res.ok) {

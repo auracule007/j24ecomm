@@ -43,7 +43,7 @@ export const EcomProvider = ({ children }) => {
     // fetch products
     const fetchProduct = async () => {
         try{
-            const response = await fetch("http://localhost:8000/api/products", {
+            const response = await fetch("https://ecommerce-api-b291.onrender.com/api/products", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -67,7 +67,7 @@ export const EcomProvider = ({ children }) => {
     if (isAuthenticated) {
       // if authenticated
       try {
-        const res = await fetch("http://localhost:8000/api/add-to-cart", {
+        const res = await fetch("https://ecommerce-api-b291.onrender.com/api/add-to-cart", {
           method: "POST",
           headers: {
             "auth-token": `${localStorage.getItem("auth-token")}`,
@@ -115,7 +115,7 @@ export const EcomProvider = ({ children }) => {
    const fetchCart = async () => {
     if (isAuthenticated) {
       // authenticated
-      const res = await fetch("http://localhost:8000/api/carts", {
+      const res = await fetch("https://ecommerce-api-b291.onrender.com/api/carts", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -152,7 +152,7 @@ export const EcomProvider = ({ children }) => {
       if (isAuthenticated) {
         try {
           // authenticated
-          const res = await fetch("http://localhost:8000/api/delete-cart-items", {
+          const res = await fetch("https://ecommerce-api-b291.onrender.com/api/delete-cart-items", {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -202,7 +202,7 @@ export const EcomProvider = ({ children }) => {
     
       if (isAuthenticated) {
         try {
-          const res = await fetch("http://localhost:8000/api/update-cart-items", {
+          const res = await fetch("https://ecommerce-api-b291.onrender.com/api/update-cart-items", {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -284,7 +284,7 @@ export const EcomProvider = ({ children }) => {
     const createOrder = async (transaction_Id, orderId) => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/verify-payment",
+          "https://ecommerce-api-b291.onrender.com/api/verify-payment",
           {
             method: "POST",
             headers: {
